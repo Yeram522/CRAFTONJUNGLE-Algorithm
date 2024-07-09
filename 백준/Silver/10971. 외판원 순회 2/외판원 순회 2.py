@@ -12,6 +12,9 @@ temp  = list()
 
 def go(depth, cost)->int:
     global min_cost 
+
+    if(cost >= min_cost) : return 
+    
     if( depth == N ): 
         if W[temp[N-1]][temp[0]] == 0 : return
         #print(f'{next} to {start}: {distance}+{W[next][start]}')
@@ -32,7 +35,7 @@ def go(depth, cost)->int:
             visited[i] = False
         
         
-    return 0
+    return 
         
 
 
@@ -42,4 +45,9 @@ go(0, 0)
 
    
 print(min_cost)
+       
+        
+        
+        
 
+ 
