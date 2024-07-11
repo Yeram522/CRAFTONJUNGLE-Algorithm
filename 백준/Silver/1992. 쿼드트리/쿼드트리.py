@@ -8,24 +8,18 @@ result = list()   #문자열 리스트이다.
 
 def quad_tree(x,y, div): # x,y 좌표, 나누는 분기
     color = W[x][y]
-    trigger = False
     
     for i in range(x,x + div):
         for j in range(y,y + div):
             if color != W[i][j]:
-                trigger = True
-                
-                break
-           
-    if trigger:
-        print('(', end='')
-        quad_tree(x,y, div//2)
-        quad_tree(x,y+div//2, div//2)
-        quad_tree(x+div//2,y, div//2)
-        quad_tree(x+div//2,y+div//2, div//2)
-        print(')', end='')
-        return
-        
+                print('(', end='')
+                quad_tree(x,y, div//2)
+                quad_tree(x,y+div//2, div//2)
+                quad_tree(x+div//2,y, div//2)
+                quad_tree(x+div//2,y+div//2, div//2)
+                print(')', end='')
+                return
+            
     if color == 1:
         print(1, end='')
     else:
